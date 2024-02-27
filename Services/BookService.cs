@@ -17,17 +17,10 @@ namespace BookApp.Services
 
     public class BookService: BaseService
     {
-        public IQueryable<Book> GetAll()
+        public IQueryable<C27_02_Book_> GetAll()
         {
             return
-                this.db.C27_02_Book_
-                    .Select(b => new Book()
-                    {
-                        Name = b.BookName,
-                        Summary = b.BookSummary,
-                        Author = b.BookAuthor,
-                        PageQuantity = b.BookQualitiStranica
-                    });
+                this.db.C27_02_Book_;
         }
 
         public bool AddNewBook(C27_02_Book_ newBook)
