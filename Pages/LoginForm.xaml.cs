@@ -118,7 +118,7 @@ namespace BookApp.Pages
             }
             catch (Exception ex) // Если не получается найти пользователя, значит данные неверные
             {
-                MessageBox.Show("Неверные данные!");
+                MessageBox.Show($"Неверные данные! {ex.Message}");
                 return;
             }
         }
