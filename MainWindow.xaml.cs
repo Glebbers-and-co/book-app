@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BookApp.Services;
 
 namespace BookApp
 {
@@ -20,9 +21,17 @@ namespace BookApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BookService _bookService = new BookService();
+
+        public void FillDataGrid()
+        {
+            Abibas.ItemsSource = this._bookService.GetAll().ToList();
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            FillDataGrid();
         }
     }
 }
